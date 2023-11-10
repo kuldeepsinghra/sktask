@@ -1,0 +1,8 @@
+[
+    { "name": "Alice", "origin": "City1", "destination": "City2" },
+    { "name": "Bob", "origin": "City3", "destination": "City4" },
+    { "name": "Charlie", "origin": "City5", "destination": "City6" },
+    { "name": "David", "origin": "City7", "destination": "City8" },
+    { "name": "Eve", "origin": "City9", "destination": "City10" }
+  ]
+  

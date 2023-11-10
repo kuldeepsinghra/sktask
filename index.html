@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-time Data Display</title>
+</head>
+<body>
+  <h1>Real-time Data Display</h1>
+  <div id="dataContainer"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+  <script>
+    const socket = io('http://localhost:3000'); // Replace with your listener service URL
+
+    socket.on('connect', () => {
+      console.log('Frontend connected to listener service');
+    });
+
+    socket.on('disconnect', () => {
+      console.log('Frontend disconnected from listener service');
+    });
+
+    socket.on('updateData', (data) => {
+      const dataContainer = document.getElementById('dataContainer');
+      const newItem = document.createElement('div');
+      newItem.textContent = JSON.stringify(data);
+      dataContainer.appendChild(newItem);
+    });
+  </script>
+</body>
+</html>
